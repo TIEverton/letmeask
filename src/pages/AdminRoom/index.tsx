@@ -1,50 +1,59 @@
-import { FormEvent, useState } from 'react';
-import { useParams } from 'react-router-dom'
+import { useHistory, useParams } from 'react-router-dom'
 import * as Styled from './styles';
 
 import logoImg from '../../assets/images/logo.svg';
+import deleteImg from '../../assets/images/delete.svg';
+
 import Button from '../../components/Button';
 import { RoomCode } from '../../components/RoomCode';
-import { useAuth } from '../../hooks/useAuth';
+// import { useAuth } from '../../hooks/useAuth';
 import { database } from '../../services/firebase';
 import Question from '../../components/Question';
 import { useRoom } from '../../hooks/useRoom';
+import toast from 'react-hot-toast';
 
 type RoomParams = {
   id: string
 }
 
 export default function AdminRoom() {
-  const { user } = useAuth();
+  // const { user } = useAuth();
+  const history = useHistory();
   const params = useParams<RoomParams>();
   const roomId = params.id;
   const { title, questions } = useRoom(roomId);
-  const [newQuestion, setNewQuestion] = useState('');
 
-
-  async function handleSendQuestions(event: FormEvent) {
-    event.preventDefault();
-
-    if (newQuestion.trim() === '') {
-      return
+  async function handleDeleteQuestion(questionId: string) {
+    if (window.confirm('Tem certeza que deseja excluir essa pergunta?')) {
+      await database.ref(`rooms/${roomId}/questions/${questionId}`).remove();
+      toast('Questão removida!',
+        {
+          icon: '✅',
+          style: {
+            borderRadius: '10px',
+            background: '#333',
+            color: '#fff',
+          },
+        })
     }
 
-    if (!user) {
-      alert('Toast')
-    }
+  }
 
-    const question = {
-      content: newQuestion,
-      author: {
-        name: user?.name,
-        avatar: user?.avatar
-      },
-      isHighlighted: false,
-      isAnswered: false
-    }
+  async function handleEndRoom() {
+    await database.ref(`rooms/${roomId}`).update({
+      endedAt: new Date()
+    })
+    toast('Sala encerrada!',
+      {
+        icon: '✅',
+        style: {
+          borderRadius: '10px',
+          background: '#333',
+          color: '#fff',
+        },
+      })
 
-    await database.ref(`rooms/${roomId}/questions`).push(question);
-    setNewQuestion('')
+    history.push('/');
   }
 
   return (
@@ -56,7 +65,10 @@ export default function AdminRoom() {
             <RoomCode
               code={roomId}
             />
-            <Button isOutline={true}>Encerrar sala</Button>
+            <Button
+              onClick={handleEndRoom}
+              isOutline={true}
+            >Encerrar sala</Button>
           </div>
         </div>
       </Styled.Header>
@@ -75,7 +87,14 @@ export default function AdminRoom() {
                 key={question.id}
                 content={question.content}
                 author={question.author}
-              />
+              >
+                <button
+                  type="button"
+                  onClick={() => handleDeleteQuestion(question.id)}
+                >
+                  <img src={deleteImg} alt="Remover pergunta" />
+                </button>
+              </Question>
             )
           })}
         </div>
