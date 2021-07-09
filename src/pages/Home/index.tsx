@@ -10,6 +10,7 @@ import Button from '../../components/Button';
 import { useAuth } from '../../hooks/useAuth';
 import { FormEvent, useState } from 'react';
 import { database } from '../../services/firebase';
+import toast from 'react-hot-toast';
 
 export function Home() {
   const history = useHistory();
@@ -35,8 +36,31 @@ export function Home() {
     const roomRef = await database.ref(`rooms/${roomCode}`).get();
 
     if (!roomRef.exists()) {
-      alert('Room does not exists.')
+      toast('Está sala não existe!',
+        {
+          icon: '❌',
+          style: {
+            borderRadius: '10px',
+            background: '#333',
+            color: '#fff',
+          },
+        }
+      );
       return;
+    }
+
+    if (roomRef.val().endedAt) {
+      toast('Está sala já foi fechada!',
+        {
+          icon: '❌',
+          style: {
+            borderRadius: '10px',
+            background: '#333',
+            color: '#fff',
+          },
+        }
+      );
+      return
     }
 
     history.push(`/rooms/${roomCode}`)
