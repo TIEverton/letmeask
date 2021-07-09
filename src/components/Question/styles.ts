@@ -36,20 +36,27 @@ export const Container = styled.div`
       }
     }
 
+    button {
+      background-color: transparent;
+      transition: filter 0.2s;
 
       &.like-button {
         display: flex;
         align-items: flex-end;
-        color: #737380
-      }
-
-      &.liked {
+        color: #737380;
+        gap: 8px;
+        &.liked {
         color: #835afd;
 
         svg path {
           stroke: #835afd
         }
       }
-    
+      }
+
+      &:hover {
+        filter: brightness(0.7);
+      }    
+    }
   }
 `;
