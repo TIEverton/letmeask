@@ -8,6 +8,7 @@ import logoImg from '../../assets/images/logo.svg';
 import Button from '../../components/Button';
 import { database } from '../../services/firebase';
 import { useAuth } from '../../hooks/useAuth';
+import toast from 'react-hot-toast';
 
 export function NewRoom() {
   const history = useHistory();
@@ -27,7 +28,16 @@ export function NewRoom() {
       title: newRoom,
       authorId: user?.id,
     })
-
+    toast('Sua sala foi criada!',
+      {
+        icon: '✅',
+        style: {
+          borderRadius: '10px',
+          background: '#333',
+          color: '#fff',
+        },
+      }
+    );
     history.push(`/rooms/${firebaseRoom.key}`)
   }
 
