@@ -1,46 +1,79 @@
-# Getting Started with Create React App
+<h1 align="center">
+  <img alt="letmeask" title="move.it" src=".github/logo.svg" />
+</h1>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<p align="center">
+  <a href="#-project">Project</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-technologies">Technologies</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-preview">Preview</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-getting-started">Getting started</a>&nbsp;&nbsp;&nbsp;
+</p>
 
-## Available Scripts
+<p align="center">
+  <a href="https://www.linkedin.com/in/evertonpinheiroti/"><img src="https://img.shields.io/badge/linkedin-0077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white"></a>
+  </a>
+  <img src="https://img.shields.io/static/v1?label=NLW&style=for-the-badge&message=TOGETHER&color=8257E5&labelColor=000000" alt="NLW Together" />
+  <a href="https://github.com/TIEverton/letmeask/stargazers">
+    <img alt="Stargazers" src="https://img.shields.io/github/stars/TIEverton/letmeask?color=8257E5&logo=github&style=for-the-badge">
+  </a>
+</p>
 
-In the project directory, you can run:
+<br>
 
-### `yarn start`
+## 💻 Project
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Letmeask is an application developed in ReactJS with Typescript and Firebase integration with the objective of creating live question and answer rooms so that students can interact in real time with teachers.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+<p>
+  <img alt="move.it" width="450" title="move.it" src=".github/screen-login.png" />
+  <img alt="move.it" width="450" title="move.it" src=".github/screen-challenge.png" />
+  <img alt="move.it" width="450" title="move.it" src=".github/screen-leaderboard.png" />
+  <img alt="move.it" width="450" title="move.it" src=".github/screen-next.png" />
+</p>
 
-### `yarn test`
+## 🔌 Technologies
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+This project was developed using the following technologies:
 
-### `yarn build`
+- [ReactJS](https://reactjs.org)
+- [Firebase](https://firebase.google.com/)
+- [TypeScript](https://www.typescriptlang.org/)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 🔥 Preview
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+[![Deploy with Vercel](https://vercel.com/button)](https://letmeask.evertondev.com)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## ✨ Improvements
 
-### `yarn eject`
+- [X] Added warning messages when executing a function ✔️
+- [ ] Added modal to confirm deletion
+- [ ] Added theme change, for those who like the dark
+- [ ] Added the possibility to put the live link of the class when creating the room
+- [X] Deployed the application on vercel ✔️
+ 
+## 🚀 Getting started
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Clone the project and access the folder
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```bash
+$ git clone https://github.com/TIEverton/letmeask.git && cd moveit
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Follow the steps below
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+```bash
+# Install the dependencies
+$ yarn
 
-## Learn More
+# Start the project
+$ yarn start
+```
+You can now access [`localhost:3000`](http://localhost:3000) from your browser.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+To perform the integration with firebase it is necessary
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+[Tutorial link](https://youtube.com)
+
+---
+
+Made with ♥ by Everton Pinheiro during [NLW Together](https://rocketseat.com) 👋🏻
