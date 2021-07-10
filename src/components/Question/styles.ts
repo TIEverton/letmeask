@@ -1,10 +1,29 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
-export const Container = styled.div`
+type QuestionProps = {
+  isAnswered: boolean
+  isHighlighted: boolean
+}
+
+export const Container = styled.div<QuestionProps>`
   background-color: #fefefe;
   border-radius: 8px;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
   padding: 24px;
+
+  ${(props) => props.isHighlighted && css`
+  background-color: #f4f0ff;
+  border: 1px solid #835afd;
+  
+  footer .user-info span {
+    color: #29292E;
+  }
+  `}
+  
+  ${(props) => props.isAnswered && css`
+    background: #DBDCDD;
+  `}
+  
   & + & {
     margin-top: 8px;
   }
@@ -35,11 +54,11 @@ export const Container = styled.div`
         font-size: 14px;
       }
     }
-
+    
     button {
+      margin-left: 8px;
       background-color: transparent;
       transition: filter 0.2s;
-
       &.like-button {
         display: flex;
         align-items: flex-end;
