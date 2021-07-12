@@ -46,7 +46,8 @@ This project was developed using the following technologies:
 ## ✨ Improvements
 
 - [X] Added warning messages when executing a function ✔️
-- [ ] Added modal to confirm deletion
+- [X] Added modal to confirm question deletion ✔️
+- [X] Added modal to confirm room closure ✔️
 - [ ] Added theme change, for those who like the dark
 - [ ] Added the possibility to put the live link of the class when creating the room
 - [X] Deployed the application on vercel ✔️
