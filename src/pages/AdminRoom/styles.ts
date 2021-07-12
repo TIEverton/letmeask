@@ -115,3 +115,91 @@ export const Main = styled.main`
     padding-bottom: 10px;
   }
 `;
+
+export const Modal = styled.div`
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+export const Overlay = styled.div`
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.6);
+
+  cursor: pointer;
+`;
+
+export const ModalStructure = styled.div`
+  background: #F0F0F5;
+  color: #29292E;
+  height: 50%;
+  max-height: 300px;
+
+  width: 100%;
+  max-width: 590px;
+
+  border-radius: 8px;
+  margin: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  gap: 35px;
+  z-index: 1;
+  .modal-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 5px;
+    span {
+      color: #737380;
+    }
+  }
+
+  .buttons {
+    display: flex;
+    gap: 8px;
+
+    button {
+      padding: 15px 40px;
+      border-radius: 8px;
+    }
+
+    .button-cancel {
+      background-color: #DBDCDD;
+      color: #737380;
+    }
+
+    .button-confirm {
+      background-color: #E73F5D;
+      color: #FFFFFF;
+    }
+  }
+`;
+
+export const EmptyQuestion = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  img {
+    margin-bottom: 15px;
+  }
+  
+  h2 {
+    color: #29292E;
+  }
+
+  span {
+    color: #737380;
+  }
+`;

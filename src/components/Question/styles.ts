@@ -22,6 +22,7 @@ export const Container = styled.div<QuestionProps>`
   
   ${(props) => props.isAnswered && css`
     background: #DBDCDD;
+    border: none;
   `}
   
   & + & {
