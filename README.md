@@ -71,10 +71,6 @@ $ yarn start
 ```
 You can now access [`localhost:3000`](http://localhost:3000) from your browser.
 
-To perform the integration with firebase it is necessary
-
-[Tutorial link](https://youtube.com)
-
 ---
 
 Made with ♥ by Everton Pinheiro during [NLW Together](https://rocketseat.com) 👋🏻
