@@ -6,7 +6,6 @@ import deleteImg from '../../assets/images/delete.svg';
 import checkImg from '../../assets/images/check.svg'
 import answerImg from '../../assets/images/answer.svg'
 import deleteImgModal from '../../assets/images/delete-modal.svg';
-import emptyImg from '../../assets/images/empty-questions.svg';
 
 import Button from '../../components/Button';
 import { RoomCode } from '../../components/RoomCode';
@@ -16,6 +15,7 @@ import Question from '../../components/Question';
 import { useRoom } from '../../hooks/useRoom';
 import toast from 'react-hot-toast';
 import { useState } from 'react';
+import { EmptyQuestion } from '../../components/EmptyQuestion';
 
 type RoomParams = {
   id: string
@@ -167,11 +167,7 @@ export default function AdminRoom() {
           </div>
           <div className="question-list">
             {questions.length <= 0 && (
-              <Styled.EmptyQuestion>
-                <img src={emptyImg} alt="Illustration" />
-                <h2>Nenhuma pergunta por aqui...</h2>
-                <span>Envie o código desta sala para seus amigos e comece a responder perguntas!</span>
-              </Styled.EmptyQuestion>
+              <EmptyQuestion />
             )}
             {questions.map((question) => {
               return (

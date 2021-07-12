@@ -10,6 +10,7 @@ import { database } from '../../services/firebase';
 import Question from '../../components/Question';
 import { useRoom } from '../../hooks/useRoom';
 import toast from 'react-hot-toast';
+import { EmptyQuestion } from '../../components/EmptyQuestion';
 
 type RoomParams = {
   id: string
@@ -132,6 +133,9 @@ export default function Room() {
         </form>
 
         <div className="question-list">
+          {questions.length <= 0 && (
+            <EmptyQuestion />
+          )}
           {questions.map((question) => {
             return (
               <Question
