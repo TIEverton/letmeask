@@ -25,10 +25,11 @@
 Letmeask is an application developed in ReactJS with Typescript and Firebase integration with the objective of creating live question and answer rooms so that students can interact in real time with teachers.
 
 <p>
-  <img alt="move.it" width="450" title="move.it" src=".github/screen-login.png" />
-  <img alt="move.it" width="450" title="move.it" src=".github/screen-challenge.png" />
-  <img alt="move.it" width="450" title="move.it" src=".github/screen-leaderboard.png" />
-  <img alt="move.it" width="450" title="move.it" src=".github/screen-next.png" />
+  <img alt="letmeask" width="450" title="letmeask" src=".github/tela1.png" />
+  <img alt="letmeask" width="450" title="letmeask" src=".github/tela2.png" />
+  <img alt="letmeask" width="450" title="letmeask" src=".github/tela3.png" />
+  <img alt="letmeask" width="450" title="letmeask" src=".github/tela4.png" />
+    <img alt="letmeask" width="450" title="letmeask" src=".github/tela5.png" />
 </p>
 
 ## 🔌 Technologies
@@ -48,8 +49,6 @@ This project was developed using the following technologies:
 - [X] Added warning messages when executing a function ✔️
 - [X] Added modal to confirm question deletion ✔️
 - [X] Added modal to confirm room closure ✔️
-- [ ] Added theme change, for those who like the dark
-- [ ] Added the possibility to put the live link of the class when creating the room
 - [X] Deployed the application on vercel ✔️
  
 ## 🚀 Getting started
@@ -70,10 +69,6 @@ $ yarn
 $ yarn start
 ```
 You can now access [`localhost:3000`](http://localhost:3000) from your browser.
-
-To perform the integration with firebase it is necessary
-
-[Tutorial link](https://youtube.com)
 
 ---
 
